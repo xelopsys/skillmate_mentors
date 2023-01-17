@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
+import { appWithTranslation } from "next-i18next";
+import type { AppProps } from "next/app";
+import NiceModal from "@ebay/nice-modal-react";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+	return (
+		<>
+			<NiceModal.Provider>
+				<Component {...pageProps} />
+			</NiceModal.Provider>
+		</>
+	);
 }
+
+export default appWithTranslation(App);
