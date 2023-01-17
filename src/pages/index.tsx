@@ -1,9 +1,9 @@
 import Head from "next/head";
-// import { Inter } from "@next/font/google";
+import Card from "@components/card/card";
 import HomeScreen from "@/app/home/home-screen";
-// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
 	return (
 		<div>
 			<Head>

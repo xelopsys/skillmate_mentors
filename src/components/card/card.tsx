@@ -8,9 +8,18 @@ interface CardProperties {
 	extraCss?: string;
 }
 
+function classNames(...classes: string[]) {
+	return classes.filter(Boolean).join(" ");
+}
+
 function Card({ img, title, btnText, onClick, extraCss }: CardProperties) {
 	return (
-		<div className={`w-[305px] min-h-[444px] h-max ${extraCss || ""}`}>
+		<div className={
+			classNames(
+				extraCss || "",
+				"w-[305px] min-h-[444px] h-max"
+			)
+		}>
 			<article className="group flex flex-col justify-center items-center gap-y-2 w-full h-full">
 				<img
 					alt="Lava"
